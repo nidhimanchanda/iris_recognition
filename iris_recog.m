@@ -12,12 +12,17 @@ Ig = imfilter(j,G,'same');
 
 BW1 = edge(Ig,'prewitt');
 BW2 = edge(Ig,'canny');
-BW3 = bwareaopen(bw,30);
+BW3 = bwareaopen(BW2,65);
 
-
-figure
-subplot(1,2,1), imshow(BW2)
-subplot(1,2,2), imshow(BW3)
-truesize
+J = imcomplement(BW3);
+imshow(J);
+%figure
+%subplot(1,2,1), imshow(BW2)
+%subplot(1,2,2), imshow(BW3)
+%truesize
 %imshow(Ig)
 
+
+%image = imread('shit.jpg');
+%img = im2bw(BW3);
+%imshow(img);
